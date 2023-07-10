@@ -52,7 +52,7 @@ jobs:
           tag: ArchLinuxARM-aarch64_${{ env.BUILD_DATE }}
           artifacts: ${{ env.WORKING_DIR }}/BUILD_OUT/*
           allowUpdates: true
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.RELEASES_TOKEN }}
           body: |
             Default users:
 
