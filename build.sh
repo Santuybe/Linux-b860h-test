@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUT_FILENAME="ArchLinuxARM-aarch64_S905X"
+OUT_FILENAME="manjaroLinuxARM-aarch64_S905X"
 
 ROOTFS_TYPE="ext4"
 
@@ -14,7 +14,7 @@ ROOT_LABEL="ROOT"
 
 IMG_FILENAME="${OUT_FILENAME}.img"
 WORKING_DIR="/WORKING_DIR"
-ARCHLINUXARM_TARBALL_FILE="${WORKING_DIR}/ArchLinuxARM-aarch64.tar.gz"
+MANJAROLINUXARM_TARBALL_FILE="${WORKING_DIR}/Manjaro-ARM-aarch64-latest.tar.gz"
 OUT_DIR="${WORKING_DIR}/BUILD_OUT"
 BOOT_FILES="${WORKING_DIR}/src/boot-files"
 PATCH_FILES="${WORKING_DIR}/src/patch"
@@ -72,7 +72,7 @@ make_image() {
 
   print_msg "[3/5] Copying files"
   cp -af ${BOOT_FILES}/* mnt/boot
-  bsdtar -xpf ${ARCHLINUXARM_TARBALL_FILE} -C mnt
+  bsdtar -xpf ${MANJAROLINUXARM_TARBALL_FILE} -C mnt
   cp -af ${PATCH_FILES}/* mnt/
   [ -f ${WORKING_DIR}/lscolors.sh ] && cp ${WORKING_DIR}/lscolors.sh mnt/etc && chmod +x mnt/etc/lscolors.sh
 
